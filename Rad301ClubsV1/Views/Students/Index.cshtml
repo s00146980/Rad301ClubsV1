@@ -5,9 +5,18 @@
 }
 
 <h2>Index</h2>
+@* A form to post back to the same controller a search term *@
+<form method="get">
+    <label>First Name</label>
+    <input type="search" name="FirstName" value=@ViewBag.VFname />
+    <label>Surname</label>
+    <input type="search" name="Surname" value=@ViewBag.VSname />
+    <input type="submit" name="Search by Surname" />
+</form>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (User.IsInRole("Admin"))//Will only be viewable by profiles of this role
+    { Html.ActionLink("Create New", "Create"); }
 </p>
 <table class="table">
     <tr>

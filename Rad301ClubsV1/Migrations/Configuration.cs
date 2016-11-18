@@ -39,6 +39,7 @@ namespace Rad301ClubsV1.Migrations
                 UserName = "S12345678@mail.itsligo.ie",
                 PasswordHash = new PasswordHasher().HashPassword("Ss1234567$1"),
                 SecurityStamp = Guid.NewGuid().ToString(),
+                EmailConfirmed = true
             });
 
             context.Users.AddOrUpdate(u => u.Email, new ApplicationUser
@@ -49,6 +50,7 @@ namespace Rad301ClubsV1.Migrations
                 UserName = "powell.paul@itsligo.ie",
                 PasswordHash = new PasswordHasher().HashPassword("Ppowell$1"),
                 SecurityStamp = Guid.NewGuid().ToString(),
+                EmailConfirmed = true
             });
 
             context.Users.AddOrUpdate(u => u.Email,new ApplicationUser
@@ -59,6 +61,7 @@ namespace Rad301ClubsV1.Migrations
                 UserName = "S00000001@mail.itsligo.ie",
                 PasswordHash = new PasswordHasher().HashPassword("SS00000001$1"),
                 SecurityStamp = Guid.NewGuid().ToString(),
+                EmailConfirmed = true
             });
 
             ApplicationUser admin = manager.FindByEmail("powell.paul@itsligo.ie");
